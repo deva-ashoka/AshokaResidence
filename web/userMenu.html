@@ -1,0 +1,226 @@
+<!--
+  User: Paras
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="theme-color" content="#c4122f"/>
+
+    <title>Residence Life</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/AshokaFavicon.png">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection"/>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<style>
+
+    .nav-wrapper {
+        background-color: #c4122f;
+    }
+
+    @media only screen and (max-width: 990px) {
+        html, body {
+            background-color: #eeeeee;
+        }
+    }
+
+    @media only screen and (min-width: 992px) {
+        html, body {
+            background-image: url("./images/White.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+        }
+
+    }
+
+    .modal {
+        width: 80%;
+        min-height: 80% !important;
+    }
+
+</style>
+<body>
+<div class="navbar-fixed">
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo"> &nbsp; RESIDENCE LIFE</a>
+                <a href="#" data-activates="mobile-menu" class="button-collapse"><img src="./images/menu.svg"
+                                                                                      style="vertical-align:middle;"></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="myComplaints.jsp"> My complaints</a></li>
+                    <li><a href=""> Feedback</a></li>
+                    <li><a href="collapsible.html">Logout</a></li>
+                </ul>
+                <ul class="side-nav" id="mobile-menu">
+                    <li><a href="myComplaints.jsp">My complaints</a></li>
+                    <li><a href=""> Feedback</a></li>
+                    <li><a href="collapsible.html">Logout</a></li>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+</div>
+<main>
+    <div class="container">
+        <br><br><br><br>
+        <div class="row">
+            <div class="col m5 l5 s12 push-l">
+                <div class="card medium">
+                    <div class="card-image center-align">
+                        <br>
+                        <i class="material-icons" style="font-size: 180px;color:darkred; ">border_color</i>
+                    </div>
+                    <div class="card-content center-align">
+                        <h5>Launch Complaint</h5>
+                        <p>Kindly use the form at the link below to launch a complaint to maintainance or IT at
+                            Ashoka.</p>
+                    </div>
+                    <div class="card-action center-align">
+                        <a class="modal-trigger " href="#modal1" style="color: rgb(13,56,98);">Get started</a>
+
+                    </div>
+                </div>
+            </div>
+            <!----- Complaint form ------>
+            <div id="modal1" class="modal modal-fixed-footer">
+                <form method="post" action="launchComplaint" id="formSubmitComplaint">
+                    <input type="text" name="task" value="createComplaint" hidden>
+                <div class="modal-content">
+                    <h4>Complaint Form</h4>
+                    <br>
+
+                    <p><b>Department : </b></p>
+                    <div class="input-field col s12">
+                        <select name="department">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="Maintainance">Maintainance</option>
+                            <option value="IT">IT</option>
+                            <option value="Housekeeping">Housekeeping</option>
+                        </select>
+                        <!--<label>Choose department</label>-->
+                    </div>
+                    <br>
+                    <p><b>Location of complaint : </b></p>
+                    <div class="input-field col s12">
+                        <select name="location">
+                            <option value="Floor" selected>Floor</option>
+                            <option value="Room">Room</option>
+                            <option value="Residence">Residence</option>
+                            <option value="Academic block">Academic block</option>
+                            <option value="Campus">Campus</option>
+                        </select>
+                        <!--<label>Choose department</label>-->
+                    </div>
+                    <br>
+                    <p><b>Type of complaint : </b></p>
+                    <div class="input-field col s12">
+                        <select name="type">
+                            <option value="AC" selected>AC</option>
+                            <option value="WIFI">WIFI</option>
+                            <option value="Garbage collection">Garbage collection</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <!--<label>Choose department</label>-->
+                    </div>
+                    <br>
+                    <p style="display: inline-block;float: left;"><b>Issue : </b></p>
+                    <div class="input-field col s10 l10 push-l1">
+                        <input id="issue" name="issue" type="text" class="validate">
+                        <label for="issue">Describe in short</label>
+                    </div>
+                    <br>
+
+                    <p style="display: block; float: left;clear: left;"><b>Complaint description : </b></p>
+                    <div class="input-field col s12">
+                        <textarea id="textarea1" name="issueDescription" class="materialize-textarea"></textarea>
+                        <label for="textarea1">Elaborate the issue</label>
+                    </div>
+
+                    <p style="clear: both;float:left;display: inline-block;vertical-align: bottom"><b>Priority : </b>
+                    </p>
+                    <!-- Switch -->
+                    <div class="switch" style="clear: both;">
+                        <label>
+                            Low
+                            <input type="checkbox" name="emergency">
+                            <span class="lever"></span>
+                            High (to be removed)
+                        </label>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <a id="submitComplaint" class="modal-action modal-close waves-effect waves-green btn-flat ">SUBMIT</a>
+                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">CANCEL</a>
+                </div>
+                </form>
+            </div>
+            <!----- Complaint form over ------>
+
+            <div class="col m5 l5 s12 push-l2">
+                <div class="card medium ">
+                    <div class="card-image center-align">
+                        <br>
+                        <i class="material-icons" style="font-size: 180px;color:darkred; ">format_color_text</i>
+                    </div>
+                    <div class="card-content center-align">
+
+                        <h5>Announcements</h5>
+                        <p>All the important announcements relating to Campus life can be found here.</p>
+                    </div>
+                    <div class="card-action center-align">
+                        <a class="modal-trigger waves-effect waves-light" href="#modal2" style="color: rgb(13,56,98);">VIEW
+                            ALl</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Structure -->
+            <div id="modal2" class="modal modal-fixed-footer">
+                <div class="modal-content">
+                    <h4>Announcements</h4>
+                    <br>
+                    <p>This is example of some announcement.</p>
+                    <p>This is example of some announcement.</p>
+                    <p>Consider the Binary Search Tree implementation discussed in class. The (incomplete) java code may
+                        be
+                        downloaded using the following link: http://cs.ashoka.edu.in:8080/cs301/Code/BinarySearchTree
+                        (a) (10 points) Complete the code for all the incomplete methods in the class
+                        BinarySearchTree</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">CLOSE</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</main>
+</body>
+<script type="text/javascript" src="materialize/js/jquery.js"></script>
+<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+<script>
+
+    $(".button-collapse").sideNav();
+    $('.modal-trigger').leanModal();
+    $('select').material_select();
+
+    document.getElementById("submitComplaint").addEventListener("click",function () {
+
+        document.getElementById("formSubmitComplaint").submit();
+
+    });
+</script>
+</html>

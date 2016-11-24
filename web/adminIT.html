@@ -1,0 +1,209 @@
+<!--
+  User: Deva
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta charset="UTF-8">
+
+    <title>IT Portal</title>
+
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection"/>
+    <link rel="shortcut icon" type="image/x-icon" href="images/AshokaFavicon.png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<style>
+
+
+    .nav-wrapper {
+        background-color: #c4122f;
+    }
+
+    @media only screen and (max-width: 990px) {
+        html, body {
+            background-color: #eeeeee;
+        }
+    }
+
+    @media only screen and (min-width: 992px) {
+        html, body {
+            background-image: url("./images/White.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+        }
+
+    }
+
+    .modal {
+        width: 50%;
+        min-height: 50% !important;
+    }
+
+</style>
+
+
+<body>
+
+<header>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo"> &nbsp; IT @ ASHOKA </a>
+            <a href="#" data-activates="mobile-menu" class="button-collapse"><img src="./images/menu.svg"
+                                                                                  style="vertical-align:middle;"></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href=""> Notifications </a></li>
+                <li><a href=""> Resolved </a></li>
+                <li><a href="collapsible.html">Logout</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-menu">
+                <li><a href=""> Notifications </a></li>
+                <li><a href=""> Resolved </a></li>
+                <li><a href="collapsible.html">Logout</a></li>
+
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<br/><br/><br/>
+
+
+<select class="browser-default" style="width:250px; margin-left: 2%;">
+    <option value="" disabled selected>Sort by:</option>
+    <option value="1">Priority: Low to High</option>
+    <option value="2">Priority: High to Low</option>
+    <option value="3">Date: Old to Recent</option>
+    <option value="4">Date: Recent to Old</option>
+</select>
+
+
+<br/><br/>
+
+<table class="highlight centered responsive-table">
+    <thead>
+    <tr>
+        <th data-field="priority">Priority</th>
+        <th data-field="type">Date | Time</th>
+        <th data-field="student">Student Details</th>
+        <th data-field="type">Complaint Type</th>
+        <th data-field="issue">Issue</th>
+
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <td> High</td>
+        <td>29/08/2016 | 15:36 PM</td>
+        <td>
+            Deva Surya Vivek <br/>
+            RA-5, Men's Residence <br/>
+            8222955113
+        </td>
+        <td>Room</td>
+        <td>
+            <a class="modal-trigger" href="#modal1" style="color: rgb(13,56,98);">Wifi</a>
+            <div id="modal1" class="modal modal-fixed-footer">
+                <div class="modal-content">
+                    <h4>Issue Description</h4>
+                    <br>
+                    <p>I am not receiving any wifi signal in my room. I can connect to the wifi or see the signal only
+                        when
+                        I stand near the door. </p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">CANCEL</a>
+                </div>
+            </div>
+        </td>
+        <td>
+            <button class="btn waves-effect waves-light" style="background-color: #0d3862;" type="submit" name=""
+                    value="resolved"> Resolved
+            </button>
+        </td>
+    </tr>
+
+    <tr>
+        <td> Low</td>
+        <td>05/09/2016 | 19:55 PM</td>
+        <td>
+            Paras Bhattrai <br/>
+            601, Men's Residence <br/>
+            9999999999
+        </td>
+        <td>Personal</td>
+        <td>
+            <a class="modal-trigger" href="#modal2" style="color: rgb(13,56,98);">Laptop speaker</a>
+        </td>
+        <div id="modal2" class="modal modal-fixed-footer">
+            <div class="modal-content">
+                <h4>Issue Description</h4>
+                <br>
+                <p></p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">CANCEL</a>
+            </div>
+        </div>
+        <td>
+            <button class="btn waves-effect waves-light" style="background-color: #0d3862;" type="submit" name=""
+                    value="resolved"> Resolved
+            </button>
+        </td>
+    </tr>
+    <tr>
+        <td>High</td>
+        <td>07/09/2016 | 10:25 AM</td>
+        <td>
+            Amanjit <br/>
+            123, Women's Residence <br/>
+            8888888888
+        </td>
+        <td> Residence</td>
+        <td>
+            <a class="modal-trigger" href="#modal3" style="color: rgb(13,56,98);">Biometric Scanner</a>
+        </td>
+        <div id="modal3" class="modal modal-fixed-footer">
+            <div class="modal-content">
+                <h4>Issue Description</h4>
+                <br>
+                <p></p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">CANCEL</a>
+            </div>
+        </div>        <td>
+            <button class="btn waves-effect waves-light" style="background-color: #0d3862;" type="submit" name=""
+                    value="resolved"> Resolved
+            </button>
+        </td>
+
+    </tr>
+    </tbody>
+</table>
+
+
+</body>
+<script type="text/javascript" src="materialize/js/jquery.js"></script>
+<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('select').material_select();
+    });
+    $('select').material_select('destroy');
+    $(".button-collapse").sideNav();
+    $('.modal-trigger').leanModal();
+    $('select').material_select();
+</script>
+
+</html>
